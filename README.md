@@ -83,13 +83,16 @@ let  nbtab;
     btnclick.addEventListener("click", () => {
 		let  tbl  =  document.createElement("table");
 		let  tblBody  =  document.createElement("tbody");
+		// On verifie quel input est selectionné et on stock la réponse dans la variable nbtab
 		if (document.getElementById('32').checked) nbtab  =  32;
 		else  if (document.getElementById('64').checked) nbtab  =  64;
 		else  nbtab  =  128;
+		// Ensuite , on crée un tableau de la taille de nbtab
 		for (let  i  =  0; i  <  nbtab; i++) {
 			let  row  =  document.createElement("tr");
 			for (let  j  =  0; j  <  nbtab; j++) {
 			let  cell  =  document.createElement("td");
+			// Sur chaques céllule on ajoute la classe false par défaut , ainsi qu'un ID
 			cell.classList.add('false');
 			cell.id  =  `cell-${i}-${j}`
 			if (nbtab  ===  32) {
@@ -190,6 +193,8 @@ C'est parti pour coder la logique du jeu !
 Nous allons faire une fonction qui crée un autre tableau multi-dimensionnel _(cette fois-ci uniquement en JS, ce tableau ne sera jamais visible pour l'utilisateur)_ et qui stocke le même nombre de cases que le tableau HTML, la fonction sera appelée plus tard à l'intérieur de la fonction qui contiendra la logique mais nous devons la faire maintenant.
 
 ```JS
+
+// on crée un tableau
 function  createtab(mylogictab) {
 	if (document.getElementById('32').checked) nbtab  =  32;
 	else  if (document.getElementById('64').checked) nbtab  =  64;
